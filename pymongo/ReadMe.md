@@ -36,15 +36,26 @@ By default pymango is not available, we have to install separatly by using comma
         `empCollection.insert()` => debrecated
     
     - To find Documents :<br>
-    `empCollection.find_one()`<br>
-    `empCollection.find()`
+        `empCollection.find_one()`<br>
+        `empCollection.find()`
 
     - To Update Documents :<br>
-    `empCollection.update_one()`<br>
-    `empCollection.update_many()`<br>
-    `empCollection.update()`<br>
+        `empCollection.update_one()`<br> ->recommended
+        `empCollection.update_many()`<br>
+        `empCollection.update()`<br>
+
+    - To delete Document:<br>
+        `empCollection.delete_one()`<br>
+        `empCollection.delete_many()`<br>
+        `empCollection.delete()`<br>
+    
+    - Close Client => Highly Recommended<br>
+        `client_close()`
 
         
 
+* If we getting this error while retriving `_id` use `str()` function to type cast
 
-
+To perform schema validation first we need to 
+- edit set admin to builtin role in mongo db atlas in database access clink
+- then we have to set `&authSource=admin"` at the end of connections string
